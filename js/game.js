@@ -270,6 +270,7 @@ function resetGame() {
   GAME_STATE.lives = 3;
 
   $game.innerHTML = '';
+  hidePauseMenu();
   init();
   isGameRunning = false;
   document.getElementById('start-btn').disabled = false;
@@ -319,12 +320,28 @@ function startGame() {
     window.requestAnimationFrame(update);
   }
 }
+function showPauseMenu() {
+  const $pauseModal = document.getElementById('pause-modal');
+  $pauseModal.style.display = 'flex';
+}
+
+function hidePauseMenu() {
+  const $pauseModal = document.getElementById('pause-modal');
+  $pauseModal.style.display = 'none';
+}
+
+function resumeGame() {
+  hidePauseMenu();
+  pauseGame(); // This will toggle the pause state
+}
 
 function pauseGame() {
   isPaused = !isPaused;
   if (isPaused) {
+    showPauseMenu();
     document.getElementById('pause-btn').textContent = 'Resume';
   } else {
+    hidePauseMenu();
     document.getElementById('pause-btn').textContent = 'Pause';
     window.requestAnimationFrame(update);
   }

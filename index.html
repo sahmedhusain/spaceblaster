@@ -36,6 +36,16 @@
       </div>
       <button id="pause-btn" class="btn" onclick="pauseGame()" style="display: none;">Pause</button>
     </div>
+
+     <!-- Pause Menu Modal -->
+     <div id="pause-modal" class="modal" style="display: none;">
+      <div class="modal-content">
+        <h1>Game Paused</h1>
+        <button class="btn" onclick="resumeGame()">Continue</button>
+        <button class="btn" onclick="resetGame()">Restart</button>
+      </div>
+    </div>
+
     
     <footer>Left/right keys to move, Space to shoot</footer>
   </div>
