@@ -23,6 +23,8 @@ header {
 }
 
 footer {
+  display: flex;
+  justify-content: space-around;
   padding: 10px;
   text-align: center;
   font-size: 11px;
