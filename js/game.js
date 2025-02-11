@@ -17,6 +17,8 @@ const ENEMY_HORIZONTAL_PADDING = 80;
 const ENEMY_VERTICAL_PADDING = 70;
 const ENEMY_VERTICAL_SPACING = 80;
 
+const COUNTDOWN_TIME = 60; // Countdown time in seconds
+
 const GAME_STATE = {
   lastTime: Date.now(),
   leftPressed: false,
@@ -32,6 +34,7 @@ const GAME_STATE = {
   startTime: Date.now(),
   score: 0,
   lives: 3,
+  remainingTime: COUNTDOWN_TIME,
 };
 
 let isPaused = false;
@@ -268,6 +271,7 @@ function resetGame() {
   GAME_STATE.startTime = Date.now();
   GAME_STATE.score = 0;
   GAME_STATE.lives = 3;
+  GAME_STATE.remainingTime = COUNTDOWN_TIME;
 
   $game.innerHTML = '';
   hidePauseMenu();
@@ -284,8 +288,10 @@ function updateHUD() {
   const $lives = document.getElementById('lives');
 
   const elapsedTime = Math.floor((Date.now() - GAME_STATE.startTime) / 1000);
-  const minutes = Math.floor(elapsedTime / 60);
-  const seconds = elapsedTime % 60;
+  GAME_STATE.remainingTime = COUNTDOWN_TIME - elapsedTime;
+
+  const minutes = Math.floor(GAME_STATE.remainingTime / 60);
+  const seconds = GAME_STATE.remainingTime % 60;
   $time.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 
   $score.textContent = GAME_STATE.score;
@@ -305,6 +311,11 @@ function update() {
   updateEnemies(dt, $game);
 
   updateHUD();
+
+  if (GAME_STATE.remainingTime <= 0) {
+    showGameOver();
+    return;
+  }
 
   GAME_STATE.lastTime = currentTime;
   window.requestAnimationFrame(update);
