@@ -56,7 +56,7 @@ function createPlayer($game) {
 
 function createEnemy($game, x, y) {
   const $element = document.createElement('img');
-  $element.src = 'img/enemy-blue-1.png';
+  $element.src = 'img/enemy-red-2.png';
   $element.className = 'enemy';
   $game.appendChild($element);
   const enemy = { x, y, $element, isDead: false, cooldown: ENEMY_LASER_COOLDOWN };
@@ -215,7 +215,7 @@ function updateEnemies(dt, $game) {
     }
 
     if (enemy.cooldown <= 0) {
-      if (Math.random() < 0.0005) {
+      if (Math.random() < 0.005) {
         createEnemyLaser($game, x, y);
         enemy.cooldown = ENEMY_LASER_COOLDOWN;
       }
