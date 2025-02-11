@@ -1,11 +1,11 @@
-const KEY_CODE_LEFT = 37;
-const KEY_CODE_RIGHT = 39;
-const KEY_CODE_SPACE = 32;
+const KEY_CODE_LEFT = 37; // Left arrow key
+const KEY_CODE_RIGHT = 39; // Right arrow key
+const KEY_CODE_SPACE = 32; // Space key
 
-const GAME_WIDTH = 800;
-const GAME_HEIGHT = 600;
+const GAME_WIDTH = 1800;
+const GAME_HEIGHT = 760;
 
-const PLAYER_WIDTH = 50;
+const PLAYER_WIDTH = 100;
 const PLAYER_MAX_SPEED = 600;
 const LASER_MAX_SPEED = 300;
 const LASER_COOLDOWN = 0.1;
@@ -215,7 +215,7 @@ function updateEnemies(dt, $game) {
     }
 
     if (enemy.cooldown <= 0) {
-      if (Math.random() < 0.005) {
+      if (Math.random() < 0.05) {
         createEnemyLaser($game, x, y);
         enemy.cooldown = ENEMY_LASER_COOLDOWN;
       }
