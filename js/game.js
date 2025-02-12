@@ -2,8 +2,8 @@ const KEY_CODE_LEFT = 37; // Left arrow key
 const KEY_CODE_RIGHT = 39; // Right arrow key
 const KEY_CODE_SPACE = 32; // Space key
 
-const GAME_WIDTH = 1800;
-const GAME_HEIGHT = 760;
+const GAME_WIDTH = 1600;
+const GAME_HEIGHT = 660;
 
 const PLAYER_WIDTH = 100;
 const PLAYER_MAX_SPEED = 600;
