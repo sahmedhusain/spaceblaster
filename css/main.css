@@ -188,10 +188,15 @@ footer {
 }
 
 .modal-content {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
+  display: none;
+  position: absolute;
+  background: white; 
+  color: black; 
+  padding: 20px 50px; 
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); 
+  border-radius: 10px; 
+  text-align: center; 
+  animation: pop-in 1s; 
 }
 
 .modal-content h1 {

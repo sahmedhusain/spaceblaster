@@ -34,17 +34,15 @@
         <h2>You lost the game</h2>
         <button class="btn" onclick="resetGame()">Restart</button>
       </div>
-      <button id="pause-btn" class="btn" onclick="pauseGame()" style="display: none;">Pause</button>
-    </div>
-
-     <!-- Pause Menu Modal -->
-     <div id="pause-modal" class="modal" style="display: none;">
-      <div class="modal-content">
+      <div id="pause-modal" class="modal-content">
         <h1>Game Paused</h1>
         <button class="btn" onclick="resumeGame()">Continue</button>
         <button class="btn" onclick="resetGame()">Restart</button>
       </div>
+      <button id="pause-btn" class="btn" onclick="pauseGame()" style="display: none;">Pause</button>
     </div>
+
+     
 
     
     <footer>
@@ -54,6 +52,15 @@
       <div>"Mute Sound" = M</div>
       </footer>
   </div>
-  <script src="js/game.js"></script>
+  <script  type="module" src="/game.js"></script>
+  <script type="module" src="/laser.js"></script>
+  <script type="module" src="/control.js"></script>
+  <script type="module" src="/player.js"></script>
+  <script type="module" src="/enemy.js"></script>
+
+
+
+
+
 </body>
 </html>
