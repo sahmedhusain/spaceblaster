@@ -1,6 +1,6 @@
 # MIT License
 
-Copyright (c) 2024 Sayed Ahmed Husain, Qassim Aljaffer
+Copyright (c) 2024 Space Blaster
 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
